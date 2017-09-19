@@ -1,0 +1,63 @@
+$login-container-primary: #4594BF;
+$login-container-secondary: #FFFFFF;
+$login-input-width: 423px;
+$login-input-height: 56px;
+$login-input-border: 1px solid $login-container-secondary;
+$login-input-border-radius: 4px;
+
+@mixin login-input-margin($margin-top) {
+  margin-top: $margin-top;
+}
+
+
+#login {
+	transform: translate(0%, 25%);
+
+    .login-container{
+		width: 656px;
+		height: 536px;
+		background-color: $login-container-primary;
+		margin: auto;
+
+		input {
+			font-size: 24px;
+			line-height: $login-input-height !important;
+			height: $login-input-height !important;
+			margin: auto;
+		}
+
+		input, button {
+			color: $login-container-primary;
+			width: $login-input-width;
+			border: $login-input-border;
+			border-radius: $login-input-border-radius;
+			background-color: $login-container-secondary;
+		}
+
+		.login-name{
+			font-size: 48px;
+			text-align: center;
+			color: white;
+			padding-top: 40px;
+		}
+
+		.login-username{
+			@include login-input-margin(64px);
+			text-align: center;
+		}
+
+		.login-password{
+			@include login-input-margin(29px);
+			text-align: center;
+		}
+
+		.login-button{
+			@include login-input-margin(49px);
+			text-align: center;
+			button {
+				height: 75px;
+				font-size: 34px;
+			}	
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<div id="login">
+    <div class="login-container">
+        <div class="login-name">
+            Company Name
+        </div>
+        <div class="login-username">
+            <input required ng-model="vm.credentials.username" type="text" placeholder="Username">
+        </div>
+        <div class="login-password">
+            <input required ng-model="vm.credentials.password" type="password" placeholder="Password">
+        </div>
+        <div class="login-button">
+            <button ng-click="vm.onSubmit()">Sign In</button>
+        </div>
+    </div>
+</div>

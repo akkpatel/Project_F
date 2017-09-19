@@ -1,0 +1,41 @@
+
+/* Custom page header */
+.header {
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+.navbar{
+  margin-bottom: 0px !important;
+}
+
+.navbar-header{
+  Width: 100%;
+  .right-side{
+    float: right;
+  }
+}
+
+.searchBar{
+  padding-top: 7px;
+}
+
+.searchButton
+{
+  background: url("/images/go-logo.png") no-repeat center;
+  background-size: 48px;
+  width: 62px;
+  height: 38px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: lightblue;
+}

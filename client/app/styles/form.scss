@@ -1,0 +1,91 @@
+//Modal css
+
+$client-text: #A7B1C1;
+
+.address {
+  font-size: 1.8rem;
+  padding: .4rem 1rem;
+}
+
+.address-form {
+  .fieldset {
+    border: 0;
+    padding: 0;
+  }
+  .button {
+    position: relative;
+    border: 1px solid $client-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 2rem;
+    background-color: #D1C63F;
+    color: #FFFFFF;
+    height: 40px;
+    margin-top: 15px;
+    &:active {
+      background-color: transparent;
+      color: $client-text;
+    }
+  }
+  .button[disabled]
+  {
+    background-color: black;
+  }
+  .cancel-button
+  {
+    background-color: #D8D8D8;
+    color: #323531;
+  }
+  input[type="text"]
+  {
+    height: 2.2rem;
+    margin-bottom: 3.2px;
+    color: #323531;
+    font-size: 20px;
+  }
+  .bold
+  {
+    font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    color: #333333;
+  }
+  .required
+  {
+    display: flex;
+    justify-content: flex-end;
+    color: #D0021b;
+  }
+  .modal-title
+  {
+    @extend .bold;
+    font-size: 28px;
+  }
+  .account-header
+  {
+    @extend .bold;
+    font-size: 20px;
+  }
+  .sub-title
+  {
+    @extend .bold;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+  .field-columns
+  {
+    .columns
+    {
+      padding: 0px;
+    }
+  }
+}
+
+.add-address-modal
+{
+  width: 461px;
+  height: 746px;
+  padding-top: 5px;
+}

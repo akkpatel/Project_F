@@ -1,5 +1,5 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-$main-body-color: #4286f4;
+$main-body-color: lightblue;
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "foundation-apps/scss/foundation.scss";
@@ -32,36 +32,49 @@ html, body {
 
 }
 
-/* Custom page header */
-.header {
-  margin-bottom: 10px;
+.main-content-container {
+    //overflow-y: auto !important;
+    flex: 2 0 auto;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-}
-
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
+    .primary-view {
+        width: 100%;
+        &.slideInLeft, &.slideOutLeft, &.slideInRight, &.slideOutRight {
+            &.ng-enter, &.ng-leave {
+                transition: all 0.25s linear;
+            }
+        }
+    }
 }
 
 .main-container{
-  background-color: $main-body-color;
-  height: 100%;
+  //background-color: $main-body-container;
+  background-color: lightblue;
+  height: 1000px;
+  width: 100%;
+}
+
+input[type="text"]
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 100%;
+    height: 2.4rem;
+    padding: 15px 15px;
+    border: #ccc;
+    border-radius: 0;
+    background: #fff;
+    margin: 0;
+    color: #555555;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+    border: 1px solid lightblue;
+
+    &:focus{
+      border: 1px solid lightblue;
+    }
+    &:hover{
+      border: 1px solid lightblue;
+    }
 }

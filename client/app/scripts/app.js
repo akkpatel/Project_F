@@ -15,16 +15,36 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'mm.foundation'
   ])
   .config(function ($routeProvider, $stateProvider, $urlRouterProvider) {
     $stateProvider
+    .state('root', {
+        url: '',
+        abstract: true,
+        views: {
+            'header@': {
+                templateUrl: 'views/header.html',
+                controller: 'HeaderController'
+            },
+            'footer@': {
+                templateUrl:'views/footer.html'
+            }
+        },
+        navigation : {
+            // tools : globalTools
+        }
+    })
     .state('home', {
       url: '/home',
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl',
-      controllerAs: 'main'
-          
+      parent: 'root',
+      views: {
+        'content@': {
+          templateUrl: 'views/main.html',
+          controller: 'MainCtrl'
+        }
+      }   
     });
   $urlRouterProvider.otherwise('/');
   $urlRouterProvider.when('/', ['$state','TokenService' ,

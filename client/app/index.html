@@ -14,16 +14,29 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="bower_components/foundation-sites/dist/css/foundation.min.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/form.css">
 
     <!-- endbuild -->
   </head>
-  <body ng-app="fccApp" style="background-color: #24262D;">
+  <body ng-app="fccApp" style="background-color: black;">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ui-view="header">
+    <div class="grid-frame">
+      <div class="grid-block vertical">
+        <div ui-view="header" class="header"></div>
+        <div class="align-center main-content-container">
+          <div id="wrapper" class="grid-block primary-view align-center ui-animation bounceIn" ui-view="content"></div>
+        </div>
+        <div ui-view="feedback" class="feedback"></div>
+        <div ui-view="footer"></div>
+      </div>
+
+    </div>
+<!--     <div class="header" ui-view="header">
       <div class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
 
@@ -52,7 +65,7 @@
     <div class="footer" ui-view="footer">
       <div class="container">
       </div>
-    </div>
+    </div> -->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -93,11 +106,16 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
 
+        <!-- Directives -->
+        <script src="scripts/directives/searchBar.directive.js"></script>
+        <!-- Services -->
         <script src="scripts/services/localStorage.provider.js"></script>
         <script src="scripts/services/token.service.js"></script>
-
+        
+        <!--Controller -->
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/header.controller.js"></script>
         <script src="scripts/constants/constants.js"></script>
         <!-- endbuild -->
 </body>

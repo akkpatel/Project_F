@@ -19,12 +19,6 @@ angular
   ])
   .config(function ($routeProvider, $stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('login', {
-        url: '/login',
-        templateUrl: 'views/login.html',
-        controller: 'LoginController',
-        controllerAs: 'vm'
-    })
     .state('home', {
       url: '/home',
       templateUrl: 'views/main.html',
@@ -39,7 +33,7 @@ angular
                     if(TokenService.getAuthToken()){
                       $state.go('home');
                     }else{
-                        $state.go('login');
+                        $state.go('home');
                     }
         }]);
   });

@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    searchBar.$inject = [];
+    searchBar.$inject = ['getFccService', 'EditContext', '_'];
 
-    function searchBar() {
+    function searchBar(getFccService, EditContext, _) {
         return {
             restrict: 'E',
             templateUrl: 'views/searchBar.html',
@@ -11,9 +11,26 @@
             scope: true,
             link: function (scope)
             {
-                console.log('we are in searchBar');
+                scope.callSign = "";
+                scope.FRN = "";
 
-            }
+                scope.onSubmitClick = function(){
+                    if(scope.callSign || scope.FRN)
+                    {
+                        EditContext.model.setSearchParameter(scope.callSign, scope.FRN);
+                        getFccService.getCallSign(scope.callSign).then(function(response){
+                            EditContext.model.currentDataModel = _.cloneDeep(response);
+                            console.log('check the response: ', response);
+                            for(var i=0;i<response.length;i++){
+                               console.log(response[i]);
+                                //console.log(users[i].lastName);
+                            }
+                        }); 
+                    }
+
+                }
+
+            }   
         };
     }
 

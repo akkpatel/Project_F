@@ -24,18 +24,23 @@
   padding-top: 7px;
 }
 
-.searchButton
-{
-  background: url("/images/go-logo.png") no-repeat center;
-  background-size: 48px;
-  width: 62px;
-  height: 38px;
-  background-color: black;
-  border: 1px solid black;
-}
-
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: lightblue;
+}
+.search-button{
+  button {
+    border: 1px solid white;
+    color: white;
+    margin-top: 6px;
+    width: 100%;
+    background-color: black;
+  }
+
+  button[disabled]
+  {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
 }

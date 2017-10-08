@@ -1,0 +1,51 @@
+<div>
+	<div class="grid-block small-12">
+		<h3><span>Tower Information</span></h3>
+	</div>
+	<div class="grid-block small-12">
+		<div class="small-1 border-line">
+			<span>Location #</span>
+		</div>
+		<div class="small-1 border-line">
+			<span>Tower ID</span>
+		</div>
+		<div class="small-1 border-line">
+			<span>Type</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>Ant Height</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>Struc Height</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>Elevation</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>Address</span>
+		</div>
+	</div>
+	<div class="grid-block small-12" ng-repeat="item in model">
+		<div class="small-1 border-line">
+			<span>{{item.locationNumber}}</span>
+		</div>
+		<div class="small-1 border-line">
+			<span>{{item.towerId}}</span>
+		</div>
+		<div class="small-1 border-line">
+			<span>{{item.type}}</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>{{item.antennaHeight}}</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>{{item.structureHeight}}</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>{{item.elevation}}</span>
+		</div>
+		<div class="small-2 border-line">
+			<span>{{item.address}}</span>
+		</div>
+	</div>
+</div>

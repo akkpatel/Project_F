@@ -1,11 +1,9 @@
 <div class="grid-block medium-12 align-center">
     <div class="grid-block medium-4 searchBar">
-      <input type="text" ng-model="search" placeholder="Search">
+      <input type="text" ng-model="callSign" placeholder="Call Sign">
     </div>
-  <div class="grid-block medium-4 searchBar">
-    <input type="text" ng-model="location" placeholder="Location">
-    <div class="grid-block medium-2">
-      <button class="searchButton" name="SearchButton"></button>
+    <div class="grid-block small-1 search-button">
+    	  <button ng-disabled="!callSign" ng-click="onSubmitClick()">Search</button>
+
     </div>
-  </div>
 </div>

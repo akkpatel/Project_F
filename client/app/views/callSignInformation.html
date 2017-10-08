@@ -1,0 +1,80 @@
+<div>
+	<div class="grid-block small-12">
+		<h3><span>FCC CallSign {{model.callsign.toUpperCase()}} Information</span></h3>
+	</div>
+	<div class="grid-block small-12 vertical">
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				License: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{model.callsign.toUpperCase()}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				Notes: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{model.notes}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				Effective Date: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{model.grantDate}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				Status: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span ng-if="model.status === 'A'">Active</span>
+				<span ng-if="model.status !== 'A'">Inactive</span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				Radio Service: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{model.radioService}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				FRN: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span></span>
+			</div>
+		</div>
+		<div class="grid-block small-12">
+			<div class="grid-block small-2 border-line">
+				Contact: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{model.licensee}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12" ng-repeat="item in model.locations">
+			<div class="grid-block small-2 border-line">
+				State: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{item.state}}</span>
+			</div>
+		</div>
+		<div class="grid-block small-12" ng-repeat="item in model.locations">
+			<div class="grid-block small-2 border-line">
+				County: 
+			</div>
+			<div class="grid-block small-5 border-line">
+				<span>{{item.county}}</span>
+			</div>
+		</div>
+	</div>
+</div>

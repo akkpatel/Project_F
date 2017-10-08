@@ -101,14 +101,23 @@
     <script src="bower_components/angular-foundation-6/dist/angular-foundation.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="bower_components/angular-soap/soapclient.js"></script>
+    <script src="bower_components/angular-soap/angular.soap.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/testService.factory.js"></script>
+        <script src="scripts/services/subitModel.factory.js"></script>
+        <script src="scripts/services/editcontext.factory.js"></script>
 
         <!-- Directives -->
         <script src="scripts/directives/searchBar.directive.js"></script>
+        <script src="scripts/directives/callSignInformation.directive.js"></script>
+        <script src="scripts/directives/towerInformation.directive.js"></script>
+        <script src="scripts/directives/frequencyInformation.directive.js"></script>
         <!-- Services -->
         <script src="scripts/services/localStorage.provider.js"></script>
         <script src="scripts/services/token.service.js"></script>

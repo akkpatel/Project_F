@@ -1,0 +1,76 @@
+<div>
+	<div class="grid-block small-12">
+		<h3><span>Frequency Information</span></h3>
+	</div>
+	<div class="grid-block small-12" style="padding-right: 10px;">
+		<div class="grid-block small-1 border-line">
+			<span>Loc #</span>
+		</div>
+		<div class="grid-block small-2 border-line">
+			<span>Frequency</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>Emission</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>Class</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>Units</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>Power</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>Lat</span>
+		</div>
+		<div class="grid-block small-2 border-line">
+			<span>Long</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>City</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>County</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>State</span>
+		</div>
+	</div>
+	<div class="grid-block small-12" ng-repeat="item in dataModel.frequencies" style="padding-right: 10px;">
+		<div class="grid-block small-1 border-line">
+			<span>{{item.locationNumber}}</span>
+		</div>
+		<div class="grid-block small-2  border-line">
+			<span>{{item.frequency}}</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>{{item.emission}}</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>{{item.class}}</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>{{item.mobiles}}</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>{{item.power}}</span>
+		</div>
+		<div class="grid-block small-1 border-line">
+			<span>{{item.lat}}</span>
+		</div>
+		<div class="grid-block small-2 border-line">
+			<span>{{item.lon}}</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>{{item.city}}</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>{{item.county}}</span>
+		</div>
+		<div class="grid-block border-line">
+			<span>{{item.state}}</span>
+		</div>
+	</div>
+	<!-- {{model}} -->
+</div>

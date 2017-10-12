@@ -8,7 +8,7 @@
 				License: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{model.callsign.toUpperCase()}}</span>
+				<span>{{::model.callsign.toUpperCase()}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12">
@@ -16,7 +16,7 @@
 				Notes: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{model.notes}}</span>
+				<span>{{::model.notes}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12">
@@ -24,7 +24,7 @@
 				Effective Date: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{model.grantDate}}</span>
+				<span>{{::model.grantDate}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12">
@@ -41,7 +41,7 @@
 				Radio Service: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{model.radioService}}</span>
+				<span>{{::model.radioService}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12">
@@ -57,7 +57,7 @@
 				Contact: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{model.licensee}}</span>
+				<span>{{::model.licensee}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12" ng-repeat="item in model.locations">
@@ -65,7 +65,7 @@
 				State: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{item.state}}</span>
+				<span>{{::item.state}}</span>
 			</div>
 		</div>
 		<div class="grid-block small-12" ng-repeat="item in model.locations">
@@ -73,7 +73,7 @@
 				County: 
 			</div>
 			<div class="grid-block small-5 border-line">
-				<span>{{item.county}}</span>
+				<span>{{::item.county}}</span>
 			</div>
 		</div>
 	</div>

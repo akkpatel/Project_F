@@ -108,16 +108,19 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCIYkEihDv4LgLlpUZh74hFDDRd4-atkSk&sensor=false&extension=.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/services/testService.factory.js"></script>
         <script src="scripts/services/subitModel.factory.js"></script>
         <script src="scripts/services/editcontext.factory.js"></script>
+
 
         <!-- Directives -->
         <script src="scripts/directives/searchBar.directive.js"></script>
         <script src="scripts/directives/callSignInformation.directive.js"></script>
         <script src="scripts/directives/towerInformation.directive.js"></script>
         <script src="scripts/directives/frequencyInformation.directive.js"></script>
+        <script src="scripts/directives/mapDraw.directive.js"></script>
         <!-- Services -->
         <script src="scripts/services/localStorage.provider.js"></script>
         <script src="scripts/services/token.service.js"></script>

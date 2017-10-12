@@ -16,9 +16,18 @@ angular
     'ngRoute',
     'ngSanitize',
     'ui.router',
-    'mm.foundation'
+    'mm.foundation',
+    'angularSoap'
   ])
-  .config(function ($routeProvider, $stateProvider, $urlRouterProvider) {
+  // attach lodash to the window object, to use globally
+  .factory('_', ['$window',
+    function($window) {
+      return $window._;
+    }
+  ])
+  .config(function ($routeProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $stateProvider
     .state('root', {
         url: '',

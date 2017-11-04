@@ -21,7 +21,7 @@ https://help.github.com/articles/generating-ssh-keys/
 Clone this repository, where `app` is the name of your app.
 
 ```bash
-git clone https://github.com/PointSource/reserved-ui.git
+git clone https://github.com/akkpatel/Project_F.git
 ```
 
 ## Change into client directory

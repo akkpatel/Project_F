@@ -7,12 +7,30 @@
         .module('fccApp')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', 'EditContext'];
-   function MainCtrl($scope, EditContext) {
+    MainCtrl.$inject = ['$scope', 'EditContext', '_'];
+   function MainCtrl($scope, EditContext, _) {
+
+        var addLocationInfo = function(model)
+        {
+            for(var i = 0; i < model.locations.length; i++)
+            {
+                for(var j = 0; j < model.frequencies.length; j++)
+                {
+                    if(model.locations[i].locationNumber === model.frequencies[j].locationNumber)
+                    {
+                        _.merge(model.frequencies[j], model.locations[i]);
+                    }   
+                }
+            }
+        }
 
         $scope.model = EditContext.model;
         $scope.$watch('model', function(newValue){
-            $scope.dataModel = newValue.currentDataModel;
+            if(newValue.currentDataModel){
+                var model = newValue.currentDataModel;
+                addLocationInfo(model);
+                $scope.dataModel = model;
+            }
         }, true);
 
         // var authInfo = {

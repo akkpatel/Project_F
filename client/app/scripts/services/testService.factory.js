@@ -28,7 +28,8 @@
             getCallSign: function(callsign){
                 return $soap.post(base_url, "fccGetCallsign", {callsign: callsign, authInfo: authInfo});
             },
-            getProxCallSing: function(lat, lon, range){
+            getProxCallSigns: function(lat, lon, range){
+                console.log('we are calling it');
                 return $soap.post(base_url, "fccGetProxCallsigns", {lat: lat, lon: lon, range: range, unit: 'm', authInfo: authInfo});
             },
             getUserData: function(authInfo){

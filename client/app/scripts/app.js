@@ -17,7 +17,6 @@ angular
     'ngSanitize',
     'ui.router',
     'mm.foundation',
-    'angularSoap'
   ])
   // attach lodash to the window object, to use globally
   .factory('_', ['$window',

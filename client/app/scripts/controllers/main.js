@@ -22,6 +22,15 @@
                     }   
                 }
             }
+        };
+
+        var removeDuplicateFrequency = function(model)
+        {
+            if(model && model.frequencies){
+                model.frequencies = _.uniqWith(model.frequencies, function (o1, o2) {
+                    return o1['frequency'] === o2['frequency'] && o1['locationNumber'] === o2['locationNumber'];
+                });
+            }
         }
 
         $scope.model = EditContext.model;
@@ -29,6 +38,7 @@
             if(newValue.currentDataModel){
                 var model = newValue.currentDataModel;
                 addLocationInfo(model);
+                removeDuplicateFrequency(model);
                 $scope.dataModel = model;
             }
         }, true);

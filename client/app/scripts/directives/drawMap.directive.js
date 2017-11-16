@@ -1,20 +1,21 @@
 (function () {
     'use strict';
 
-    mapDraw.$inject = [];
+    drawMap.$inject = [];
 
-    function mapDraw() {
+    function drawMap() {
         return {
             restrict: 'E',
             templateUrl: 'views/mapDraw.html',
             replace: true,
             scope: {
-                model: '='
+                model: '=',
+                interferModel: '='
             },
             link: function ($scope)
             {
 
-                // console.log('check the model: ', $scope.model);
+                console.log('check the model: ', $scope.interferModel);
                 var locationArray = [];
                 var getLatLong = function()
                 {
@@ -28,6 +29,7 @@
                                 lat: location[i].lat,
                                 lon: location[i].lon,
                                 city: location[i].city,
+                                towerId: location[i].towerId,
                                 frequencies: $scope.model.frequencies
                             };
                             locationArray.push(item);
@@ -37,38 +39,6 @@
                 }
                 getLatLong();
 
-var cities = [
-    {
-        city : 'Toronto',
-        desc : 'This is the best city in the world!',
-        lat : 43.7000,
-        long : -79.4000
-    },
-    {
-        city : 'New York',
-        desc : 'This city is aiiiiite!',
-        lat : 40.6700,
-        long : -73.9400
-    },
-    {
-        city : 'Chicago',
-        desc : 'This is the second best city in the world!',
-        lat : 41.8819,
-        long : -87.6278
-    },
-    {
-        city : 'Los Angeles',
-        desc : 'This city is live!',
-        lat : 34.0500,
-        long : -118.2500
-    },
-    {
-        city : 'Las Vegas',
-        desc : 'Sin City...\'nuff said!',
-        lat : 36.0800,
-        long : -115.1522
-    }
-];
 
         var mapOptions = {
             zoom: 4,
@@ -82,28 +52,44 @@ var cities = [
     
         var infoWindow = new google.maps.InfoWindow();
     
-        var createMarker = function (info){
+        var createMarker = function (info, icon){
+            console.log('check the info in marker: ', info);
             var marker = new google.maps.Marker({
                 map: $scope.map,
                 position: new google.maps.LatLng(info.lat, info.lon),
                 title: info.city,
                 frequencies: info.frequencies,
-                icon: ''
+                icon: icon
             });
             marker.content = '<div class="infoWindowContent">' + 'Hello world' + '</div>';
         
             google.maps.event.addListener(marker, 'click', function(){
-                infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
+                var exor = info.towerId || info.address;
+                infoWindow.setContent('<h2>' + exor + '</h2>' + marker.content);
                 infoWindow.open($scope.map, marker);
             });
         
             $scope.markers.push(marker);
         
         }  
-    
+
         for (var i = 0; i < locationArray.length; i++){
             createMarker(locationArray[i]);
         }
+        var createInterferenceMarker = function(newValue)
+        {
+            console.log('we are here to draw map: ');
+            var icon = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png';
+            for(var i = 0; i < newValue.length; i++)
+            {
+                createMarker(newValue[i], icon);   
+            }
+        }
+        $scope.$watch('interferModel', function(newValue, oldValue){
+            if(newValue !== oldValue){
+                createInterferenceMarker(newValue, '');
+            }
+        }, true);
 
         $scope.openInfoWindow = function(e, selectedMarker){
             e.preventDefault();
@@ -114,5 +100,5 @@ var cities = [
         };
     }
 
-    angular.module('fccApp').directive('mapDraw', mapDraw);
+    angular.module('fccApp').directive('drawMap', drawMap);
 })();
